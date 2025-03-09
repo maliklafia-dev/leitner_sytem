@@ -119,18 +119,11 @@ const allowedOrigins = [
     `${BASE_URL}/api-docs`, //swagger
 ]
 
-app.use(
-    cors({
-        origin: function (origin, callback) {
-            if(!origin || allowedOrigins.includes(origin)) {
-                callback(null, origin);
-            } else {
-                callback(null, Error("Not allowed by Cors"));
-            }
-        },
+app.use(cors({
+        origin: allowedOrigins || "*",
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
+        allowedHeaders: "Content-Type,Authorization",
+    }),
 );
 
 // Database connection
