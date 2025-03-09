@@ -1,0 +1,56 @@
+.styleTextFeild { 
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.styleTextFeild :global(.MuiInputBase-root){ 
+        border-radius: 18px;
+        height: 80px;
+        padding-left: 10px;
+}
+
+.styleGridQuestion {
+    text-align: center;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 18px;
+    border: 1px solid #e3e3e3;
+}
+
+.styleTypograpgy { 
+    font-weight: 510;
+}
+
+.styleBox { 
+    display: flex;
+    flex-direction: column;
+    margin: 30px; 
+}
+
+.styleInputs { 
+    width: '-moz-available';
+    margin-bottom: 15px;
+}
+
+.styleInputs :global(.MuiInputBase-root){ 
+    border-radius: 18px;
+    height: 45px;
+    padding-left: 10px;
+}
+
+.styleInputs :global(.MuiOutlinedInput-root){ 
+    border-radius: 10px;
+}
+
+.styleTypographyRed { 
+    color: #D73434;
+    margin-left: 2%;
+    font-weight: 500;
+    color: red;
+}
+
+.stylesBoxPopup { 
+    margin-left: 8%;
+    margin-right: 5%;
+    padding: 25px;
+}
