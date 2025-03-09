@@ -91,6 +91,8 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 8080;
+const BASE_URL = process.env.BASE_URL;
+const FRONTEND_URL = process.env.frontend_url;
 
 const swaggerOptions = {
   definition: {
@@ -102,7 +104,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: `${BASE_URL}:${PORT}`,
         description: "Development server",
       }]
     },
@@ -114,7 +116,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: `${FRONTEND_URL} || *`,
       methods: "GET,POST,PUT,DELETE,PATCH",
       allowedHeaders: "Content-Type,Authorization",
     })
