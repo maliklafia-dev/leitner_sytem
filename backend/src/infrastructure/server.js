@@ -92,7 +92,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8080;
 const BASE_URL = process.env.BASE_URL;
-const FRONTEND_URL = process.env.frontend_url;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const swaggerOptions = {
   definition: {
@@ -114,13 +114,24 @@ const swaggerOptions = {
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+const allowedOrigins = [
+    FRONTEND_URL,
+    `${BASE_URL}/api-docs`, //swagger
+]
+
 app.use(
     cors({
-      origin: `${FRONTEND_URL} || *`,
-      methods: "GET,POST,PUT,DELETE,PATCH",
-      allowedHeaders: "Content-Type,Authorization",
+        origin: function (origin, callback) {
+            if(!origin || allowedOrigins.includes(origin)) {
+                callback(null, origin);
+            } else {
+                callback(null, Error("Not allowed by Cors"));
+            }
+        },
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     })
-  );
+);
 
 // Database connection
 const connectDB = async () => {
