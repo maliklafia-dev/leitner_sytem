@@ -1,20 +1,17 @@
 .styleBackground {
-    background: linear-gradient(135deg,rgb(18, 94, 43),rgb(3, 42, 109));
-    color: white;
+  background: linear-gradient(135deg, rgb(18, 94, 43), rgb(3, 42, 109));
+  color: white;
 }
 
 .styleBox {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.21);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    width: 500px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.21);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  width: 500px;
 }
 
 .styleButton {
-    width: 300px;
-    border-radius: 10px;
+  width: 300px;
+  border-radius: 10px;
 }
-
-
-

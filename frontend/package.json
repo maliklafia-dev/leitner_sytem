@@ -19,11 +19,11 @@
   },
   "scripts": {
     "dev": "next dev",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
