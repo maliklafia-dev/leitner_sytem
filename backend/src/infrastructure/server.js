@@ -68,7 +68,7 @@
 // });
 
 // app.listen(PORT, () => {
-//     console.log(`Server ==> http://{BASE_URL}t:${PORT}`);
+//     console.log(`Server ==> http://{BASE_URL}`);
 // });
 
 import express from "express";
@@ -104,7 +104,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `${BASE_URL}:${PORT}`,
+        url: `${BASE_URL}`,
         description: "Development server",
       }]
     },
@@ -163,8 +163,8 @@ const startServer = async () => {
         });
         
         app.listen(PORT, () => {
-            console.log(`Server ==> http://${BASE_URL}:${PORT}`);
-            console.log(`Swagger docs available at ${BASE_URL}:${PORT}/api-docs`);
+            console.log(`Server ==> http://${BASE_URL}`);
+            console.log(`Swagger docs available at ${BASE_URL}/api-docs`);
         });
     } catch (error) {
         console.error('Failed to start server:', error);
